@@ -5,9 +5,9 @@ import (
 	"github.com/xarick/golang-mongodb-elasticsearch-example/internal/handlers"
 )
 
-func SetupRouter(newsHandler *handlers.NewsHandler, healthHandler *handlers.HealthHandler) *gin.Engine {
+func SetupRouter(newsHandler *handlers.NewsHandler, checkHandler *handlers.CheckHandler) *gin.Engine {
 	router := gin.Default()
-	router.GET("/health", healthHandler.Check)
+	router.GET("/check", checkHandler.Check)
 
 	news := router.Group("/news")
 	{
