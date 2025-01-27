@@ -68,6 +68,15 @@ func (s *NewsService) GetAllNews(ctx *gin.Context) ([]models.News, error) {
 		return nil, err
 	}
 
+	// for cursor.Next(ctx) {
+	// 	var item models.News
+	// 	if err := cursor.Decode(&item); err != nil {
+	// 		log.Printf("MongoDB cursor.Decode xatosi: %v", err)
+	// 		continue
+	// 	}
+	// 	news = append(news, item)
+	// }
+
 	return news, nil
 }
 
