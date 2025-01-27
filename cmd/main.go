@@ -18,9 +18,9 @@ func main() {
 
 	newsService := services.NewNewsService(mongo, elastic)
 	newsHandler := handlers.NewNewsHandler(newsService)
-	healthHandler := handlers.NewHealthHandler()
+	checkHandler := handlers.NewCheckHandler()
 
-	r := routes.SetupRouter(newsHandler, healthHandler)
+	r := routes.SetupRouter(newsHandler, checkHandler)
 
 	if err := r.Run(cfg.RunPort); err != nil {
 		log.Fatalf("Serverda xatolik: %v", err)
